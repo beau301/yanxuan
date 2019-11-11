@@ -363,8 +363,8 @@
 .yx-cp-m-tabNav .yx-cp-tabNav-dropdown {
     z-index: 99;
     display: none;
-    width: 1202px;
-    height:404px;
+    width: 1090px;
+    height:420px;
     position: absolute;
     top: 50px;
     left: 0px;
@@ -382,7 +382,7 @@
 
 }
 .li1{
-    width: 124px;
+    width: 111px;
     height: 100%;
 }
 .li1 li{
@@ -401,7 +401,7 @@
     width: 70px;
     max-width: 70px;
     max-height: 48px;
-    margin-left: 4px;
+    margin-left: -9px;
     font-size: 14px;
     vertical-align: middle;
     line-height:50px;

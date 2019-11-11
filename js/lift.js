@@ -1,13 +1,14 @@
-$("#header").load('../header.html');
-$("#foot").load('../foot.html');
-$("#left").load('../left.html');
-$("#right").load('../right.html');
+
 
 $(function () {
+  $("#header").load('../header.html');
+  $("#foot").load('../foot.html');
+  $("#left").load('../left.html');
+  $("#right").load('../right.html');
   $.get("../js/lift.json", (data) => {
     var y = parseInt(window.location.search.substr(1))
     console.log(data)
-    $(data).eq(y-1).each((index, item) => {
+    $(data).eq(y - 1).each((index, item) => {
       // console.log(index,item)
       $("#public").append(
         `
@@ -35,10 +36,10 @@ $(function () {
          `
       )
 
-      
 
 
-//       // console.log(item.img)
+
+      //       // console.log(item.img)
       $(item.img).each((index, item1) => {
         // console.log(item1)
         $(".swiper-wrapper").last().append(`
@@ -46,32 +47,32 @@ $(function () {
              
         ` )
         var swiper1 = new Swiper('.swiper-container1', {
-            loop: true,
-            autoplay: true,
-            effect: 'fade',
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            }
-        
-          });
-          for (i = 0; i < swiper1.pagination.bullets.length; i++) {
-            swiper1.pagination.bullets[i].onmouseover = function () {
-              this.click();
-            };
+          loop: true,
+          autoplay: true,
+          effect: 'fade',
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
           }
-          $(".slick-initialized1").mouseover(() => {
-            $(".swiper-button-prev").css("display", "block")
-            $(".swiper-button-next").css("display", "block")
-          })
-          $(".slick-initialized1").mouseout(() => {
-            $(".swiper-button-prev").css("display", "none")
-            $(".swiper-button-next").css("display", "none")
-          })
+
+        });
+        for (i = 0; i < swiper1.pagination.bullets.length; i++) {
+          swiper1.pagination.bullets[i].onmouseover = function () {
+            this.click();
+          };
+        }
+        $(".slick-initialized1").mouseover(() => {
+          $(".swiper-button-prev").css("display", "block")
+          $(".swiper-button-next").css("display", "block")
+        })
+        $(".slick-initialized1").mouseout(() => {
+          $(".swiper-button-prev").css("display", "none")
+          $(".swiper-button-next").css("display", "none")
+        })
       })
 
 
@@ -237,4 +238,3 @@ $(function () {
 
 
 
-  

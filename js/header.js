@@ -43,23 +43,22 @@ $(function () {
             $(".yx-cp-firstItem").eq(0).addClass("yx-cp-active")
         })
     })
+    $(".yx-cp-m-funcTab").delegate(".yx-cp-firstItem", "click", function () {
+        console.log($(this).index())
+        var x = $(this).index()
+        var y = x - 1
+        if (y >= 0 && y < 8) {
+            window.open("./lift.html?" + y)
+        } else if (y == -1) {
+            window.open("../网易.html")
+        } else if (y == 8) {
+            window.open("../tuijian.html")
+        } else if (y == 9) {
+            window.open("../zhongchou.html")
 
+        }
 
-})
-
-$(".yx-cp-m-funcTab").delegate(".yx-cp-firstItem", "click", function () {
-    console.log($(this).index())
-    var x = $(this).index()
-    var y = x - 1
-    if (y >= 0 && y < 8) {
-        window.open("./lift.html?" + y)
-    } else if (y == -1) {
-        window.open("../网易.html")
-    } else if (y == 8) {
-        window.open("../tuijian.html")
-    } else if (y == 9) {
-        window.open("../zhongchou.html")
-
-    }
+    })
 
 })
+
